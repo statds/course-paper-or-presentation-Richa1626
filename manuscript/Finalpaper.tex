@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[margin = 1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+
+\title{Factors Affecting Movies Gross Revenue}
+
+\author{Richa Patel\\
+  Jun Yan\\[2ex]
+  Department of Statistics\\
+  University of Connecticut\\
+}
+
+\begin{document}
+
+\maketitle
+\doublespace
+
+\begin{abstract}
+
+
+\bigskip
+\noindent{\sc Keywords}:
+  
+
+\end{abstract}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+Since the dawn of cinema, a lot has evolved in terms of effects and sound design. 
+Silent or black-and-white films are no longer common. However, there had been no
+change in the variables that are used to predict revenues. The stars, directors,
+authors, budget, corporation, rating, and scores are among those elements.With 
+varying ratings and genres, movies are meant to amuse their viewers. However, 
+the writers' and directors' perspectives on those films, together with the actors 
+whose acting prowess transforms the director's vision into a live action, are what 
+stimulates their interest in those films the most. That being said, movies deliver 
+their viewers those things. The gross revenue, however, is what really matters 
+most as it determines how well the film performed at the box office.
+
+\section{Data}
+\label{sec:data}
+
+The data of this paper is taken from Kaggle \href{https://www.kaggle.com/datasets/danielgrijalvas/movies}. 
+The data includes 6820 films from 1986 to 2016 (about 220 films annually). It has
+fifteen features: budget, runtime (the amount of time the film is on screen), company 
+or productions, country, director, genre, gross (the amount of money the film bringsin), 
+name of the film, rating, date of release, IMDb ratings, votes, actors starring in the
+film, year of release, and writers. I will also be analyzing the variables that affect
+gross revenue in this paper by concentrating on the directors, stars, scores, and budget.
+
+\section{Methods}
+\label{sec:meth}
+
+After selecting the 4 varibles to focus on gross revenue of movies, I would be using
+liner regression model an my analysis medthod.Before getting started into detailed 
+regression mode, I converted the non munerical columns to NA or  As the data contain
+numerical data that is score, budget, votes, runtime and non munerical data that are 
+directors, stars, writers, ratings, year of realease, genre, company, country 
+
+\section{Results}
+\label{sec:resu}
+
+
+
+\section{Discussion}
+\label{sec:disc}
+
+
+
+\bibliography{references}
+\bibliographystyle{plainnat}
+\end{document}
+
