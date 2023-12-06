@@ -72,7 +72,7 @@ fifteen features: budget, runtime (the amount of time the film is on screen), co
 or productions, country, director, genre, gross (the amount of money the film brings in), 
 name of the film, rating, date of release, IMDb ratings, votes, actors starring in the
 film, year of release, and writers. I will be analyzing the variables that affect
-gross revenue in this paper by concentrating on the directors, stars, scores, and budget.
+gross revenue in this paper by concentrating on the directors, stars, scores,votes and budget.
 
 \section{Methods}
 \label{sec:meth}
@@ -87,10 +87,18 @@ year and the released country. Since we already had a country column, I then del
 realesed country data.
 
 The model of the linear regression is:
-$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*budget$.
+$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$.
+
+\begin{figure}
+	\caption{Correlation Graph}
+	\includegraphics[width=1\textwidth]{Corelationgraph.pdf}
+	\label{fig:Correlationgraph}
+In Figure~\ref{fig:Correlationgraph}, the plots show the corelation graph.
+\end{figure}
 
 \section{Results}
 \label{sec:res}
+
 
 
 
