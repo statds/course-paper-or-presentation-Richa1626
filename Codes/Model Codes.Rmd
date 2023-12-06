@@ -1,0 +1,35 @@
+---
+title: "Model Codes"
+author: "Richa Patel"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+getwd()
+setwd("C:/Users/babud/Downloads")
+Movies <- read.csv("./movies.csv", sep = ",", header = TRUE)
+library(caret)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(corrplot)
+
+
+Movies[is.na(Movies)] <- 0
+Movies$director <- as.numeric(factor(Movies$director, levels = unique(Movies$director)))
+Movies$star <- as.numeric(factor(Movies$star, levels = unique(Movies$star)))
+# Assuming 'Movies' is your dataset and 'released' is the column containing date strings
+
+set.seed(1)  
+ind <- sample(1:nrow(Movies), nrow(Movies) * 0.7) 
+data1train <- Movies[ind, ] 
+data1test <- Movies[-ind, ]  
+
+lm_model <- lm(gross ~ director + star + score + votes + budget, data = data1train)
+summary(lm_model)
+
+# Refit the linear regression model without the 'star' variable
+lm_model_refit <- lm(gross ~ director + votes + budget, data = data1train)
+
+# Summary of the refitted model
+summary(lm_model_refit)

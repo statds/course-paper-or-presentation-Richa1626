@@ -1,0 +1,25 @@
+---
+title: "Graph"
+author: "Richa Patel"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r}
+getwd()
+setwd("C:/Users/babud/Downloads")
+Movies <- read.csv("./movies.csv", sep = ",", header = TRUE)
+library(caret)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(corrplot)
+
+
+Movies[is.na(Movies)] <- 0
+Movies$director <- as.numeric(factor(Movies$director, levels = unique(Movies$director)))
+Movies$star <- as.numeric(factor(Movies$star, levels = unique(Movies$star)))
+
+correlation_matrix <- cor(Movies[c("director", "star", "score", "votes", "budget", "gross")])
+corrplot::corrplot(correlation_matrix, method = "color")
+
+```
