@@ -81,13 +81,20 @@ After selecting the 5 varibles to focus on gross revenue of movies, I would be u
 liner regression model an my analysis medthod. But Before getting started into detailed 
 regression model, I converted the nomial columns to numerical columns. As the data contained 
 numerical data that is score, budget, votes, runtime and nominal data that are directors, 
-stars, writers, ratings, year of realease, genre, company, country. Afterwards, I looked for any missing values or NA values and replaced them with 0.
+stars, writers, ratings, year of realease, genre, company, country. Afterwards, I looked 
+for any missing values or NA values and replaced them with 0.
 
-For EDA analysis as it is to gaining insights and understanding the characteristics of the data I will be using Correlation graph.Allowing to identify patterns, dependencies, or potential relationships among variables. The data was then divided into training and test sets so that a model could be trained on one set and its performance assessed on the other, with a 7:3 split ratio adjustment made. And then Linear regression is applied to the data set.
-
+For EDA analysis as it is to gaining insights and understanding the characteristics 
+of the data I will be using Correlation graph.Allowing to identify patterns, dependencies,
+or potential relationships among variables. The data was then divided into training and 
+test sets so that a model could be trained on one set and its performance assessed on the 
+other, with a 7:3 split ratio adjustment made. And then Linear regression is applied to 
+the data set.
 
 The model of the linear regression is:
-$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$.
+
+$$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$$.
+
 
 \begin{figure}
   \centering
@@ -101,8 +108,8 @@ In Figure~\ref{fig:Correlationgraph}, the plots show the corelation graph.
 \label{sec:res}
 
 \begin{table}[h]
-\centering
 \caption{Table 1: Linear Regression Model}
+\centering
 \begin{tabular}{rrrrr}
 \hline
  & Estimate   & Std.Error & t value & Pr (\textgreater|t|) \\
@@ -117,11 +124,16 @@ budget    & 2.501e+00  & 3.848e-02 & 65.010  & 2e-16 \\
 \end{tabular}
 \end{table}
 
-The linear regression model's coefficients are displayed in Table 1 for our observation. Additionally, each variable's p-value is has to beless than 0.05 in order to be significantly inpacting Revenue. The data indicates that neither the variable star (p-value of 0.8886) nor the score (p-value of 0.0186) are statistically significant in predicting the result. Not as significant as other factors, even if the score's p-value is 0.0186 which is somewhat below the usual significance level of 0.05.
+The linear regression model's coefficients are displayed in Table 1 for our observation. 
+Additionally, each variable's p-value is has to beless than 0.05 in order to be significantly
+inpacting Revenue. The data indicates that neither the variable star (p-value of 0.8886) 
+nor the score (p-value of 0.0186) are statistically significant in predicting the result.
+Not as significant as other factors, even if the score's p-value is 0.0186 which is somewhat
+below the usual significance level of 0.05.
 
 \begin{table}[h]
-\centering
 \caption{Table 2: Fitted Linear Regresion Model}
+\centering
 \begin{tabular}{rrrrr}
 \hline
  & Estimate   & Std.Error & t value & Pr (\textgreater|t|) \\ 
@@ -134,7 +146,23 @@ budget      & 2.486e+00  & 3.791e-02 & 65.576  & $<$ 2e-16 \\
 \end{tabular}
 \end{table}
 
-The factors star and score were eliminated because of greater p-values than 0.05, which indicated that they had little to no impact on revenue. In order to have a more thorough understanding of the variables influencing revenue, an altered linear regression model was developed. Table 2 shows a p-value of less than 0.05 for each of the variables—director, votes, and budget—indicating that these factors have a considerable influence on revenue.
+The factors star and score were eliminated because of greater p-values than 0.05, 
+which indicated that they had little to no impact on revenue. In order to have a 
+more thorough understanding of the variables influencing revenue, an altered linear 
+regression model was developed. Table 2 shows a p-value of less than 0.05 for each 
+of the variables—director, votes, and budget—indicating that these factors have a
+considerable influence on revenue.
+
+Final Model: 
+
+$$Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$$.
+
+As in this model, directors, budget and votes are the most influential variables.
+Since the coefficient of directors is 9300, it may be inferred that selecting a 
+director for a unit boosts revenue by 9300. Comparably, the votes coefficent of 
+327.6 means that a unit increase in votes corresponds to an indirect gain in income 
+of 237.6. The budget's coefficient of 2.486 indicates that a unit increase in the 
+budget will result in a 2.486 increase in revenue.
 
 
 \section{Discussion}
