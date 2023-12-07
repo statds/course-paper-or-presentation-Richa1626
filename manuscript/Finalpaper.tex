@@ -77,14 +77,14 @@ gross revenue in this paper by concentrating on the directors, stars, scores,vot
 \section{Methods}
 \label{sec:meth}
 
-After selecting the 4 varibles to focus on gross revenue of movies, I would be using
+After selecting the 5 varibles to focus on gross revenue of movies, I would be using
 liner regression model an my analysis medthod. But Before getting started into detailed 
 regression model, I converted the nomial columns to numerical columns. As the data contained 
 numerical data that is score, budget, votes, runtime and nominal data that are directors, 
-stars, writers, ratings, year of realease, genre, company, country. Afterwards, I eliminated
-rows with NA values and divided the returned column into numerical data for the released 
-year and the released country. Since we already had a country column, I then deleted the 
-realesed country data.
+stars, writers, ratings, year of realease, genre, company, country. Afterwards, I looked for any missing values or NA values and replaced them with 0.
+
+For EDA analysis as it is to gaining insights and understanding the characteristics of the data I will be using Correlation graph.Allowing to identify patterns, dependencies, or potential relationships among variables. The data was then divided into training and test sets so that a model could be trained on one set and its performance assessed on the other, with a 7:3 split ratio adjustment made. And then Linear regression is applied to the data set.
+
 
 The model of the linear regression is:
 $Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$.
@@ -100,7 +100,45 @@ In Figure~\ref{fig:Correlationgraph}, the plots show the corelation graph.
 \section{Results}
 \label{sec:res}
 
+\begin{table}[h]
+\centering
+\caption{Table 1: Linear Regression Model}
+\begin{tabular}{rrrr}
+\hline
+\textbf{Coefficients} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{t value} & \textbf{Pr(\textgreater|t|)} \\
+\hline
+(Intercept) & -4.745e+07 & 9.255e+06 & -5.127 & 3.05e-07 *** \\
+director & 9.393e+03 & 2.153e+03 & 4.363 & 1.31e-05 *** \\
+star & -3.136e+02 & 2.245e+03 & -0.140 & 0.8889 \\
+score & 3.391e+06 & 1.441e+06 & 2.353 & 0.0187 * \\
+votes & 3.178e+02 & 9.622e+00 & 33.028 & < 2e-16 *** \\
+budget & 2.501e+00 & 3.848e-02 & 65.010 & < 2e-16 *** \\
+\hline
+\end{tabular}
+\caption{Coefficients}
+\label{tab:coefficients}
+\end{table}
 
+The linear regression model's coefficients are displayed in Table 1 for our observation. Additionally, each variable's p-value is has to beless than 0.05 in order to be significantly inpacting Revenue. The data indicates that neither the variable star (p-value of 0.8886) nor the score (p-value of 0.0186) are statistically significant in predicting the result. Not as significant as other factors, even if the score's p-value is 0.0186 which is somewhat below the usual significance level of 0.05.
+
+\begin{table}[h]
+\centering
+\caption{Table 2: Fitted Linear Regresion Model}
+\begin{tabular}{rrrr}
+\hline
+\textbf{Coefficients} & \textbf{Estimate} & \textbf{Std. Error} & \textbf{t value} & \textbf{Pr(\textgreater|t|)} \\
+\hline
+(Intercept) & -2.649e+07 & 2.312e+06 & -11.454 & $<$ 2e-16 *** \\
+director & 9.300e+03 & 1.568e+03 & 5.931 & 3.2e-09 *** \\
+votes & 3.276e+02 & 8.675e+00 & 37.765 & $<$ 2e-16 *** \\
+budget & 2.486e+00 & 3.791e-02 & 65.576 & $<$ 2e-16 *** \\
+\hline
+\end{tabular}
+\caption{Coefficients}
+\label{tab:coefficients}
+\end{table}
+
+The factors star and score were eliminated because of greater p-values than 0.05, which indicated that they had little to no impact on revenue. In order to have a more thorough understanding of the variables influencing revenue, an altered linear regression model was developed. Table 2 shows a p-value of less than 0.05 for each of the variables—director, votes, and budget—indicating that these factors have a considerable influence on revenue.
 
 
 \section{Discussion}
