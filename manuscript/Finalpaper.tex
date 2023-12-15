@@ -26,13 +26,12 @@
 \begin{abstract}
 
 The expanding economy and changing cultural expectations are driving the film industry's 
-steady expansion. This study applies knowledge from previous studies to examine factors 
-that impact box office income. The study examines important factors such income, popularity,
+steady expansion. The study examines important factors such income, popularity,
 runtime, and vote average using a dataset that was obtained from the Kaggle website and 
 included information on over 6820 movies. Techniques for visual analysis are used to 
-comprehend how they are interdependent. The results demonstrate that three important 
-factors influence a film's financial performance at the box office: popularity, budget,
-and vote average. The statistically substantial correlations between them are shown using 
+comprehend how they are interdependent. The results demonstrate that threeimportant 
+factors influence a film's financial performance at the box office: directors, budget,
+and votes. The statistically substantial correlations between them are shown using 
 linear regression modeling. This study offers useful insights into the elements that 
 contribute to a film's box office success, direction for stakeholders, and doable
 recommendations to improve each specific film's performance. The report, which is supported 
@@ -64,7 +63,7 @@ most popular website for movie reviews and ratings, it could be interesting to l
 user reviews and find out what people liked and didn't like, which might help us determine
 whether or not the movie has satisfied viewers, which could have a positive or negative 
 effect on the movie's box office performance \citep{3}. However, the writers' and directors' perspectives on
-those films, together with the actors whose acting prowess transforms the director's vision 
+those films, together with the actors whose acting transforms the director's vision 
 into a live action, are what stimulates their interest in those films the most. Sometimes
 stars with a lot of popularity may also have a big impact on the direction of movies. In certain cases,
 obtaining agreements from distributors, exhibitors, producers, investors, and sponsors 
@@ -99,15 +98,15 @@ The data of this paper is taken from Kaggle \href{https://www.kaggle.com/dataset
 The data includes 6820 films from 1986 to 2016 (about 220 films annually). It has
 fifteen features: budget, runtime (the amount of time the film is on screen), company 
 or productions, country, director, genre, gross (the amount of money the film brings in), 
-name of the film, rating, date of release, IMDb ratings, votes, actors starring in the
+name of the film, rating (R, PG, etc), date of release, socre (IMDb ratings), votes (user votes), actors starring in the
 film, year of release, and writers. I will be analyzing the variables that affect
-gross revenue in this paper by concentrating on the directors, stars, scores,votes and budget.
+gross revenue in this paper by concentrating on the following variables directors, stars, scores,votes and budget.
 
 \section{Methods}
 \label{sec:meth}
 
 After selecting the 5 varibles to focus on gross revenue of movies, I would be using
-liner regression model an my analysis medthod. But Before getting started into detailed 
+liner regression model in my analysis medthod. But Before getting started into detailed 
 regression model, I converted the nomial columns to numerical columns. As the data contained 
 numerical data that is score, budget, votes, runtime and nominal data that are directors, 
 stars, writers, ratings, year of realease, genre, company, country. Afterwards, I looked 
@@ -121,7 +120,7 @@ or potential relationships among variables.
   \centering
 	\includegraphics[width=1\textwidth]{Correlationgraph.pdf}
 	\label{fig:Correlationgraph}
-In Figure~\ref{fig:Correlationgraph}, the plots show the corelation graph.
+In Figure 1, the plots show the Correlation Graph.
 \end{figure}
 
 The correlation between each axis’s variables is displayed by each square. From 
@@ -140,7 +139,10 @@ ratio adjustment made. And then Linear regression is applied to
 the data set.
 
 The model of the linear regression is:
-$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$.
+
+\begin{equation}
+ Revenue = \beta_0 + \beta_1 * directors + \beta_2 * stars + \beta_3 * scores + \beta_4 *votes + \beta_5* budget $. 
+\end{equation}
 
 \section{Results}
 \label{sec:res}
@@ -203,7 +205,10 @@ analysis, and after the fitted regression, the variables with p-values less than
 also similar. However, I used directors as my variable rather than pupulation.
 
 Final Model: 
+
+\begin{equation}
 $Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$.
+\end{equation}
 
 As in this model, directors, budget and votes are the most influential variables.
 Since the coefficient of directors is 9300, it may be inferred that selecting a 
