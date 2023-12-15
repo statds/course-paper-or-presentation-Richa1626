@@ -67,11 +67,11 @@ those films, together with the actors whose acting transforms the director's vis
 into a live action, are what stimulates their interest in those films the most. Sometimes
 stars with a lot of popularity may also have a big impact on the direction of movies. In certain cases,
 obtaining agreements from distributors, exhibitors, producers, investors, and sponsors 
-even serves as the "green light" \citep{2}. However, the budget also has a significant 
+even serves as the "green light" \citep{1}. However, the budget also has a significant 
 impact because it sets the initial outlay for the movie and, to some extent, predicts the movie's
-quality, as the initial outlay of funds may be a good indicator of the movie's total earnings \citep{1}. 
+quality, as the initial outlay of funds may be a good indicator of the movie's total earnings \citep{2}. 
 That being said, movies deliver their viewers those things. The most significant measure of a movie's popularity among viewers
-is its box office earnings, Similarly, the best measure of a film's earnings is its box office performance \citep{1}.
+is its box office earnings, Similarly, the best measure of a film's earnings is its box office performance \citep{2}.
 The gross revenue, however, is what really matters most as it determines how well the film performed at the box office.
 
 A similar study on the factors determining revenue was carried out in 2023 by Bingyu Hao 
@@ -87,8 +87,8 @@ The data set in this study provides details on the variable found in Section~\re
 It is followed by a brief explanation of the methodology used in Section~\ref{sec:meth}, 
 which describes the study that was conducted to anticipate the variables influencing movie 
 income. Results are presented in Section~\ref{sec:res}, which also includes a graphic representation
-explaining the analysis's conclusions. Finally, there is the discussion section, 
-Section~\ref{sec:dis}, which contains the conclusion and further expectations for this
+explaining the analysis's conclusions. Finally, there is the concution section, 
+Section~\ref{sec:con}, which contains the conclusion and further expectations for this
 paper's consideration.
 
 \section{Data}
@@ -139,9 +139,8 @@ ratio adjustment made. And then Linear regression is applied to
 the data set.
 
 The model of the linear regression is:
-
 \begin{equation}
- Revenue = \beta_0 + \beta_1 * directors + \beta_2 * stars + \beta_3 * scores + \beta_4 *votes + \beta_5* budget $. 
+ Revenue = \beta_0 + \beta_1 * directors + \beta_2 * stars + \beta_3 * scores + \beta_4 *votes + \beta_5* budget 
 \end{equation}
 
 \section{Results}
@@ -205,9 +204,8 @@ analysis, and after the fitted regression, the variables with p-values less than
 also similar. However, I used directors as my variable rather than pupulation.
 
 Final Model: 
-
 \begin{equation}
-$Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$.
+Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget
 \end{equation}
 
 As in this model, directors, budget and votes are the most influential variables.
@@ -217,12 +215,33 @@ director for a unit boosts revenue by 9300. Comparably, the votes coefficent of
 of 237.6. The budget's coefficient of 2.486 indicates that a unit increase in the 
 budget will result in a 2.486 increase in revenue.
 
+\section{Conclution}
+\label{sec:con}
 
+Intriguing findings were revealed by this study, which examined important variables 
+affecting box office receipts. After thorough examination, it became clear that budget, 
+votes, and directors all had a significant impact on a movie's ability to make money. 
+The variable with the greatest influence was the director, indicating their critical 
+function in generating money. And the second gretest factor being votes. This shows 
+that people are now paying more and more attention to what other people think of a movie, 
+and people are easily influenced by what others say about amovie to see it or not \citep{2}. 
+In contrast to traditional assumptions, stars and ratings showed low statistical relevance in revenue forecast.
 
-\section{Discussion}
-\label{sec:dis}
+The results highlight how directors have the power to shape the sector and call for
+a reassessment of accepted wisdom. Despite the longstanding importance of stars and 
+scores, their relatively little influence calls into question business norms. Analyses 
+in comparison with previous research, particularly that of Hao, reveal similar results, 
+but slightly different in focus. One should interpret the dataset cautiously due to its 
+scope limitations and its only concentration on numerical measures. To supplement 
+quantitative analysis, future research can examine qualitative elements that capture 
+complex audience attitudes.
 
-
+According to this study, those involved in the film business may utilize the information 
+gathered from it to help them make strategic decisions. It highlights the significance of 
+directors in predicting income and proposes that production decisions should be made with 
+careful consideration for director selection, budgetary constraints, and audience feedback.
+Subsequent investigations may encompass qualitative information, sophisticated machine 
+learning methods, and delicate factor integration to enhance the precision of revenue forecasting.
 
 \bibliography{refs}
 \bibliographystyle{plain}
