@@ -25,10 +25,26 @@
 
 \begin{abstract}
 
+The expanding economy and changing cultural expectations are driving the film industry's 
+steady expansion. This study applies knowledge from previous studies to examine factors 
+that impact box office income. The study examines important factors such income, popularity,
+runtime, and vote average using a dataset that was obtained from the Kaggle website and 
+included information on over 10,000 movies. Techniques for visual analysis are used to 
+comprehend how they are interdependent. The results demonstrate that three important 
+factors influence a film's financial performance at the box office: popularity, budget,
+and vote average. The statistically substantial correlations between them are shown using 
+linear regression modeling. This study offers useful insights into the elements that 
+contribute to a film's box office success, direction for stakeholders, and doable
+recommendations to improve each specific film's performance. The report, which is supported 
+by an in-depth understanding of the variables influencing box office revenue, presents
+a positive assessment of the film industry's future course.
+
 
 \bigskip
 \noindent{\sc Keywords}:
-  
+Linear Regression
+Factors
+Movie Revenue
 
 \end{abstract}
 
@@ -95,13 +111,23 @@ or potential relationships among variables.
 In Figure~\ref{fig:Correlationgraph}, the plots show the corelation graph.
 \end{figure}
 
+The correlation between each axis’s variables is displayed by each square. From 
+-1 to +1 is the correlation range. A linear trend between the two variables is shown
+by values that are closer to zero. Positive correlation indicates that the closer one 
+is to 1, the greater the link; that is, as one grows, so does the other. When one variable 
+decreases while the other grows, the correlation is comparable when it is closer to -1.
+Because the squares there are perfectly correlated, each variable is correlated with itself,
+which is why all of the diagonals are 1/dark blue. Regarding the other variables, a greater 
+connection is indicated by a larger number and a darker hue. The plot is also symmetrical
+about the diagonal since the same two variables are being paired together in those squares.
+
 The data was then divided into training and test sets so that a model could be 
 trained on one set and its performance assessed on the other, with a 7:3 split 
 ratio adjustment made. And then Linear regression is applied to 
 the data set.
 
 The model of the linear regression is:
-$$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$$.
+$Revenue = \beta_0 +\beta_1*directors + \beta_2*stars + \beta_3*scores + \beta_4*votes \beta_5*budget$.
 
 \section{Results}
 \label{sec:res}
@@ -153,7 +179,7 @@ of the variables—director, votes, and budget—indicating that these factors h
 considerable influence on revenue.
 
 Final Model: 
-$$Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$$.
+$Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$.
 
 As in this model, directors, budget and votes are the most influential variables.
 Since the coefficient of directors is 9300, it may be inferred that selecting a 
