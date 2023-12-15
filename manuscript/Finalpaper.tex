@@ -72,13 +72,18 @@ even serves as the "green light" \citep{2}. That being said, movies deliver thei
 viewers those things. The most significant measure of a movie's popularity among viewers
 is its box office earnings, Similarly, the best measure of a film's earnings is its box 
 office performance \citep{1}. The gross revenue, however, is what really matters most as it 
-determines how well the film performed at the box office. In 2023, Bingyu Hao of York
-University in Canada conducted a similar study on the factors influencing revenue. 
-Hao's research focused on the TMDb Movies dataset, which includes information on over 
-10,000 movies and their features such as revenue, popularity, budget, runtime, and vote 
-average, among others.
+determines how well the film performed at the box office.
 
-The data set in this study provides details on the variable found in Section~\ref{sec:data}. 
+A similar study on the factors determining revenue was carried out in 2023 by Bingyu Hao 
+of York University in Canada. Hao's study concentrated on the TMDb Movies dataset, which 
+contains details about more than 10,000 films and their attributes including budget, runtime, 
+revenue, popularity, and vote average, among others. He made use of the revenue distribution 
+and scatter graph in relation to budget, runtime, vote average, and popularity, among other 
+factors for EDA analysis. Then, he employed fitted regression and linear regression as his models. Then ultimately
+came to the conclusion that the last factors influencing the ability to anticipate movie revenue 
+are popularity, vote average, and budget.
+
+The data set in this study provides details on the variable found in Section~\ref{sec:data}.  
 It is followed by a brief explanation of the methodology used in Section~\ref{sec:meth}, 
 which describes the study that was conducted to anticipate the variables influencing movie 
 income. Results are presented in Section~\ref{sec:res}, which also includes a graphic representation
@@ -161,7 +166,7 @@ Additionally, each variable's p-value is has to beless than 0.05 in order to be 
 inpacting Revenue. The data indicates that neither the variable star (p-value of 0.8886) 
 nor the score (p-value of 0.0186) are statistically significant in predicting the result.
 Not as significant as other factors, even if the score's p-value is 0.0186 which is somewhat
-below the usual significance level of 0.05.
+below the usual significance level of 0.05. 
 
 \begin{table}[h]
 \caption{Table 2: Fitted Linear Regresion Model}
@@ -185,6 +190,12 @@ regression model was developed. Table 2 shows a p-value of less than 0.05 for ea
 of the variables—director, votes, and budget—indicating that these factors have a
 considerable influence on revenue.
 
+The budget, vote average, and popularity are significant independent variables with
+p-values less than 0.05, according to Hao's prediction, which has a significance p-value
+of 0.05. Therefore, in order to analyze movie earnings, he looked at votes, budget, and 
+population. The variables that were utilized are identical to the ones I had used for my 
+analysis, and after the fitted regression, the variables with p-values less than 0.05 are
+also similar. However, I used directors as my variable rather than pupulation.
 
 Final Model: 
 $Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$.
@@ -196,6 +207,7 @@ director for a unit boosts revenue by 9300. Comparably, the votes coefficent of
 327.6 means that a unit increase in votes corresponds to an indirect gain in income 
 of 237.6. The budget's coefficient of 2.486 indicates that a unit increase in the 
 budget will result in a 2.486 increase in revenue.
+
 
 
 \section{Discussion}
