@@ -68,11 +68,12 @@ those films, together with the actors whose acting prowess transforms the direct
 into a live action, are what stimulates their interest in those films the most. Sometimes
 stars with a lot of popularity may also have a big impact on the direction of movies. In certain cases,
 obtaining agreements from distributors, exhibitors, producers, investors, and sponsors 
-even serves as the "green light" \citep{2}. That being said, movies deliver their 
-viewers those things. The most significant measure of a movie's popularity among viewers
-is its box office earnings, Similarly, the best measure of a film's earnings is its box 
-office performance \citep{1}. The gross revenue, however, is what really matters most as it 
-determines how well the film performed at the box office.
+even serves as the "green light" \citep{2}. However, the budget also has a significant 
+impact because it sets the initial outlay for the movie and, to some extent, predicts the movie's
+quality, as the initial outlay of funds may be a good indicator of the movie's total earnings \citep{1}. 
+That being said, movies deliver their viewers those things. The most significant measure of a movie's popularity among viewers
+is its box office earnings, Similarly, the best measure of a film's earnings is its box office performance \citep{1}.
+The gross revenue, however, is what really matters most as it determines how well the film performed at the box office.
 
 A similar study on the factors determining revenue was carried out in 2023 by Bingyu Hao 
 of York University in Canada. Hao's study concentrated on the TMDb Movies dataset, which 
@@ -168,6 +169,10 @@ nor the score (p-value of 0.0186) are statistically significant in predicting th
 Not as significant as other factors, even if the score's p-value is 0.0186 which is somewhat
 below the usual significance level of 0.05. 
 
+The variables that I used yielded the same findings as those that Hao used in his linear regression.
+Additionally comparable are the variables having p-values less than 0.05. Instead of using population,
+budget, runtime, and vote average as my variables, I utilized directors, star, score, vote, and budget.
+
 \begin{table}[h]
 \caption{Table 2: Fitted Linear Regresion Model}
 \centering
@@ -199,7 +204,6 @@ also similar. However, I used directors as my variable rather than pupulation.
 
 Final Model: 
 $Revenue = -2.649e+07 +9300*directors + 327.6*votes + 2.486*budget$.
-
 
 As in this model, directors, budget and votes are the most influential variables.
 Since the coefficient of directors is 9300, it may be inferred that selecting a 
